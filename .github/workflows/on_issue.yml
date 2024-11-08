@@ -1,0 +1,7 @@
+name: On issue
+on: issues
+jobs:
+  print_something:
+    runs-on: ubuntu-latest
+    steps:
+      - echo: "Hello, world!"
