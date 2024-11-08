@@ -2,7 +2,6 @@ name: Multi step workflow
 on: workflow_dispatch
 jobs:
   lint:
-    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -12,7 +11,7 @@ jobs:
       - name: lint
         run: npm run lint
   test:
-    needs: setup
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -22,7 +21,7 @@ jobs:
       - name: test
         run: npm test
   build:
-    needs: setup
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Get code
