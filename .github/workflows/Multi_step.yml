@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run lint
-        run: npm lint
+        run: npm run lint
   tests:
     needs: setup
     runs-on: ubuntu-latest
@@ -53,4 +53,4 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: build
-        run: npm build
+        run: npm run build
